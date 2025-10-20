@@ -2,8 +2,6 @@
 
 *UNC Chapel Hill's Smart Answering Machine - Cutting Through Website Chaos*
 
-An AI-powered answering machine for UNC Chapel Hill that cuts through website chaos using RAG. Never hunt through subdomains again!
-
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.1+-6DB33F?logo=springboot)](https://spring.io/)
 [![React](https://img.shields.io/badge/React-18+-61DAFB?logo=react)](https://reactjs.org/)
 [![RAG](https://img.shields.io/badge/Architecture-RAG-FF6B6B)](https://arxiv.org/abs/2005.11401)
