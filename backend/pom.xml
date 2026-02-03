@@ -8,7 +8,7 @@
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>4.0.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
-  </parent>
+	</parent>
 	
 	<groupId>edu.unc.cs</groupId>
 	<artifactId>heelp-ai</artifactId>

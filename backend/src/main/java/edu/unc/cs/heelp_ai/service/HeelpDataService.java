@@ -59,8 +59,9 @@ public class HeelpDataService {
 
     private void syncToVectorStore(HeelpData data) {
         if (data.getText_content() != null && !data.getText_content().isEmpty()) {
-            // Use the HeelpData ID as the Document ID for easy retrieval/deletion
-            Document document = new Document(data.getId().toString(),
+            // Use a deterministic UUID based on the HeelpData ID
+            String docId = generateDocumentId(data.getId());
+            Document document = new Document(docId,
                     data.getText_content(),
                     Map.of("source_id", data.getId(), "url", data.getUrl()));
             System.out.println("Document: " + document);
@@ -69,7 +70,12 @@ public class HeelpDataService {
     }
 
     private void deleteFromVectorStore(Long id) {
-        // Delete using the ID we assigned (HeelpData ID -> String)
-        vectorStore.delete(List.of(id.toString()));
+        // Delete using the same deterministic UUID
+        String docId = generateDocumentId(id);
+        vectorStore.delete(List.of(docId));
+    }
+
+    private String generateDocumentId(Long id) {
+        return java.util.UUID.nameUUIDFromBytes(("heelp_data:" + id).getBytes()).toString();
     }
 }
