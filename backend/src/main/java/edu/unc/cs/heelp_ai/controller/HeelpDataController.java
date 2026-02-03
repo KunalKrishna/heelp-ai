@@ -21,6 +21,8 @@ public class HeelpDataController {
 
     @PostMapping
     public HeelpData createData(@RequestBody HeelpData data) {
+        System.out.println("Creating data: " + data.getText_content());
+        System.out.println("Creating data: " + data.getUrl());
         return service.createData(data);
     }
 
